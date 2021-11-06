@@ -9,3 +9,6 @@ Local Modifications:
     * https://chromium-review.googlesource.com/q/I1d8a6e263fddb9e4cc6265a313011a18d18bbf9e
       (04383393e Add missing typecast and re-enable timestamp test)
   baefbe85d Cap target bitrate to raw rate internally
+  218b99892 vp8 encoder: fix some integer overflows
+  05f80a920 vp8,calc_pframe_target_size: fix integer overflow
+  7afb3a676 vp8_update_rate_correction_factors: fix integer overflow
