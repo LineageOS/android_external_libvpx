@@ -210,7 +210,8 @@ intel="--disable-sse4_1 --disable-avx --disable-avx2 --disable-avx512 --as=yasm"
 gen_config_files x86 "--target=x86-linux-gcc ${intel} ${all_platforms}"
 gen_config_files x86_64 "--target=x86_64-linux-gcc ${intel} ${all_platforms}"
 gen_config_files arm-neon "--target=armv7-linux-gcc ${all_platforms}"
-gen_config_files arm64 "--force-target=armv8-linux-gcc ${all_platforms}"
+arm64="--disable-neon_dotprod --disable-neon_i8mm"
+gen_config_files arm64 "--target=armv8-linux-gcc ${arm64} ${all_platforms}"
 gen_config_files generic "--target=generic-gnu ${all_platforms}"
 
 echo "Remove temporary directory."
@@ -233,7 +234,7 @@ cd $TEMP_DIR
 gen_rtcd_header x86 x86 "${intel}"
 gen_rtcd_header x86_64 x86_64 "${intel}"
 gen_rtcd_header arm-neon armv7
-gen_rtcd_header arm64 armv8
+gen_rtcd_header arm64 armv8 "${arm64}"
 gen_rtcd_header generic generic
 
 echo "Prepare Makefile."

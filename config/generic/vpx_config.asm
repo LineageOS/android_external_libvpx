@@ -2,13 +2,17 @@
 @  using the ads2gas.pl script.
 .syntax unified
 .equ VPX_ARCH_ARM ,  0
+.equ VPX_ARCH_AARCH64 ,  0
 .equ VPX_ARCH_MIPS ,  0
 .equ VPX_ARCH_X86 ,  0
 .equ VPX_ARCH_X86_64 ,  0
 .equ VPX_ARCH_PPC ,  0
 .equ VPX_ARCH_LOONGARCH ,  0
-.equ HAVE_NEON ,  0
 .equ HAVE_NEON_ASM ,  0
+.equ HAVE_NEON ,  0
+.equ HAVE_NEON_DOTPROD ,  0
+.equ HAVE_NEON_I8MM ,  0
+.equ HAVE_SVE ,  0
 .equ HAVE_MIPS32 ,  0
 .equ HAVE_DSPR2 ,  0
 .equ HAVE_MSA ,  0
@@ -78,7 +82,6 @@
 .equ CONFIG_MULTI_RES_ENCODING ,  0
 .equ CONFIG_TEMPORAL_DENOISING ,  1
 .equ CONFIG_VP9_TEMPORAL_DENOISING ,  0
-.equ CONFIG_CONSISTENT_RECODE ,  0
 .equ CONFIG_COEFFICIENT_RANGE_CHECKING ,  0
 .equ CONFIG_VP9_HIGHBITDEPTH ,  1
 .equ CONFIG_BETTER_HW_COMPATIBILITY ,  0
@@ -91,4 +94,5 @@
 .equ CONFIG_EMULATE_HARDWARE ,  0
 .equ CONFIG_NON_GREEDY_MV ,  0
 .equ CONFIG_RATE_CTRL ,  0
+.equ CONFIG_COLLECT_COMPONENT_TIMING ,  0
     .section .note.GNU-stack,"",%progbits
